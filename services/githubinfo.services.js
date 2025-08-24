@@ -1,6 +1,6 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const genAI = new GoogleGenerativeAI("AIzaSyBaOZah76ol7g1RvLk0MLH05bdK7DsYNhY");
+const genAI = new GoogleGenerativeAI(process.env.config(GEMINI_API_KEY));
 const model = genAI.getGenerativeModel({
     model: "gemini-2.0-flash",
     systemInstruction: `Analyse the gihub repo and Provide a Brief Summary of Objective of the repo
